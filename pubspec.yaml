@@ -15,6 +15,7 @@ dependencies:
   shared_preferences: ^2.2.3
   get: 4.6.6
   dio: ^5.4.3+1
+  skeletons: ^0.0.3
   flutter: 
     sdk: flutter
 
@@ -25,5 +26,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
+  assets:
+    - assets/images/png/place_holder.png
   uses-material-design: true
 

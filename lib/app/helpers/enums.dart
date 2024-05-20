@@ -1,4 +1,5 @@
 enum CategoriesEnum {
+  all,
   business,
   entertainment,
   general,

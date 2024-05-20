@@ -6,7 +6,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:get/get.dart';
 
-import 'app/config/theme.dart';
 import 'app/config/translate/messages.dart';
 import 'app/helpers/keys.dart';
 import 'app/helpers/prefs.dart';
@@ -17,7 +16,7 @@ Future<void> main() async {
   await inject();
   runApp(
     DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (context) => GetMaterialApp(
         title: 'News Finder',
         scrollBehavior: const MaterialScrollBehavior().copyWith(
@@ -31,7 +30,7 @@ Future<void> main() async {
         debugShowCheckedModeBanner: false,
         useInheritedMediaQuery: true,
         builder: DevicePreview.appBuilder,
-        theme: buildTheme(context),
+        theme: ThemeData.light(),
         locale: Locale(
             Prefs.getString(PrefsKeys.lang).isEmpty ? 'en' : Prefs.getString(PrefsKeys.lang)),
         translations: Messages(),
