@@ -40,30 +40,5 @@ class DetailsTextWidget extends StatelessWidget {
         ),
       ],
     );
-    return RichText(
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: title,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          const WidgetSpan(
-            child: SizedBox(
-              width: 10,
-            ),
-          ),
-          TextSpan(
-            text: detail,
-            style: const TextStyle(
-              color: Colors.grey,
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }

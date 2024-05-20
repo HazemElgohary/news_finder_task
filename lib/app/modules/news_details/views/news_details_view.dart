@@ -5,6 +5,7 @@ import 'package:news_finder_task/app/config/widgets/default_button.dart';
 import 'package:news_finder_task/app/config/widgets/details_text_widget.dart';
 import 'package:news_finder_task/app/helpers/extentions/date_time.dart';
 import 'package:news_finder_task/generated/assets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/news_details_controller.dart';
 
@@ -31,7 +32,9 @@ class NewsDetailsView extends GetView<NewsDetailsController> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: DefaultButton(
           text: 'articles\'s website',
-          onTap: () {},
+          onTap: () {
+            launchUrl(Uri.parse(controller.item.url));
+          },
         ),
       ),
       body: ListView(
@@ -59,7 +62,7 @@ class NewsDetailsView extends GetView<NewsDetailsController> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ...List.generate(

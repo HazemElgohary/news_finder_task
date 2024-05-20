@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
 import 'package:news_finder_task/app/modules/news_details/bindings/news_details_binding.dart';
@@ -15,12 +17,12 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.NEWS_SCREEN,
-      page: () => NewsScreenView(),
+      page: () => const NewsScreenView(),
       binding: NewsScreenBinding(),
     ),
     GetPage(
       name: _Paths.NEWS_DETAILS,
-      page: () => NewsDetailsView(),
+      page: () => const NewsDetailsView(),
       binding: NewsDetailsBinding(),
     ),
   ];
