@@ -25,6 +25,7 @@ class NewsScreenView extends GetView<NewsScreenController> {
         backgroundColor: Colors.lightBlue,
       ),
       body: CustomScrollView(
+        controller: controller.scrollController,
         slivers: [
           SliverAppBar(
             expandedHeight: 70,
@@ -57,13 +58,21 @@ class NewsScreenView extends GetView<NewsScreenController> {
                       itemCount: 5,
                     )
                   : SliverList.separated(
-                      itemBuilder: (context, index) => NewsItem(
-                        item: controller.news[index],
-                      ),
+                      itemBuilder: (context, index) {
+                        if (index < controller.news.length) {
+                          return NewsItem(
+                            item: controller.news[index],
+                          );
+                        } else {
+                          return const NewsLoadingItem();
+                        }
+                      },
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 10,
                       ),
-                      itemCount: controller.news.length,
+                      itemCount: controller.loadingMore.value
+                          ? controller.news.length + 2
+                          : controller.news.length,
                     ),
             ),
           ),
