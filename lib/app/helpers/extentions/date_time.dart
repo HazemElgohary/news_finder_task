@@ -5,7 +5,9 @@ import 'package:intl/intl.dart';
 
 extension ToDay on DateTime {
   String toOurDay() {
-    if (day == DateTime.now().day && month == DateTime.now().month && year == DateTime.now().year) {
+    if (day == DateTime.now().day &&
+        month == DateTime.now().month &&
+        year == DateTime.now().year) {
       return 'today'.tr;
     } else if (day == DateTime.now().day - 1 &&
         month == DateTime.now().month &&

@@ -31,8 +31,9 @@ Future<void> main() async {
         useInheritedMediaQuery: true,
         builder: DevicePreview.appBuilder,
         theme: ThemeData.light(),
-        locale: Locale(
-            Prefs.getString(PrefsKeys.lang).isEmpty ? 'en' : Prefs.getString(PrefsKeys.lang)),
+        locale: Locale(Prefs.getString(PrefsKeys.lang).isEmpty
+            ? 'en'
+            : Prefs.getString(PrefsKeys.lang)),
         translations: Messages(),
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,
