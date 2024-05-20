@@ -27,7 +27,9 @@ class NewsScreenController extends GetxController {
 
       final newList = await service.getNews(
         page: page.value,
-        category: selectedCategory.value == CategoriesEnum.all ? null : selectedCategory.value,
+        category: selectedCategory.value == CategoriesEnum.all
+            ? null
+            : selectedCategory.value,
       );
       if (newList.isNotEmpty) {
         canLoadingMore.value = true;
@@ -62,7 +64,8 @@ class NewsScreenController extends GetxController {
     );
     scrollController.addListener(
       () {
-        if (scrollController.position.pixels == scrollController.position.maxScrollExtent &&
+        if (scrollController.position.pixels ==
+                scrollController.position.maxScrollExtent &&
             canLoadingMore.value) {
           page.value++;
           getNews();

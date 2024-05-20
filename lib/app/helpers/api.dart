@@ -111,7 +111,8 @@ class DioWrapper {
         options: Options(headers: {
           'Accept': 'application/json',
           if (Prefs.getString(PrefsKeys.token).isNotEmpty)
-            HttpHeaders.authorizationHeader: 'Bearer ${Prefs.getString(PrefsKeys.token)}',
+            HttpHeaders.authorizationHeader:
+                'Bearer ${Prefs.getString(PrefsKeys.token)}',
           ...headers,
         }),
       );
