@@ -9,7 +9,7 @@ class NewsScreenController extends GetxController {
   final service = Get.put(NewsServices());
   final loading = false.obs;
   final news = <NewsModel>[].obs;
-  final selectedCategory = Rx<CategoriesEnum?>(null);
+  final selectedCategory = Rx<CategoriesEnum>(CategoriesEnum.all);
 
   Future<void> getNews() async {
     try {

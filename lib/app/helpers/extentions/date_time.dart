@@ -21,7 +21,7 @@ extension ToDay on DateTime {
   }
 
   String toCustomFormat() {
-    return DateFormat('yyyy-MM-dd').format(this);
+    return DateFormat('dd / MM / yyyy').format(this);
   }
 
   String getDayName() {

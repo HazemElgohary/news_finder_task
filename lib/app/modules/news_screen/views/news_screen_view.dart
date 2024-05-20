@@ -28,6 +28,7 @@ class NewsScreenView extends GetView<NewsScreenController> {
         slivers: [
           SliverAppBar(
             expandedHeight: 70,
+            floating: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 decoration: const BoxDecoration(
